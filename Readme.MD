@@ -18,6 +18,6 @@
 
 - JS: Pegar o que veio do input da primeira página, consumir o JSON com estas informações
 
-## Organiações de tarefas
+## Organizações de tarefas
 
 - Separar as pastas de acordo com suas funções, assim como os arquivos
