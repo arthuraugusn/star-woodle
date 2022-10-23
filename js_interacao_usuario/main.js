@@ -1,18 +1,35 @@
+/* 
+
+- OBJETIVO: Arquivo responsável por interagir com o usuário no index
+- AUTOR: Arthur Augusto da Silva Nunes, Lucas Camilo Ramalho, Heitor Pontieiri
+- DATA DE CRIAÇÃO: 23/10/2022
+- VERSÃO: 1.0
+
+*/
+
+import {getAllCharacters} from "../js_consumo_api/swapi.js"
+
 'use strict'
 
-document.getElementById('vader').addEventListener('mouseover', function(){
+const criarDivVader = function(){
     const div= document.createElement('div') 
 
-    const main= document.querySelector('.darth_vader')
+    const divVader= document.querySelector('.darth_vader')
 
-    div.classList.add('teste')
+    div.classList.add('caixa_exemplos')
 
-    const kkk = main.querySelector('.teste')
+    const caixaExemplo = divVader.querySelector('.caixa_exemplos')
 
-    main.appendChild(div)
+    divVader.appendChild(div)
 
-    if(kkk!= null){
-        kkk.parentNode.removeChild(kkk)
+    if(caixaExemplo!= null){
+        caixaExemplo.parentNode.removeChild(caixaExemplo)
     }
+
+    return divVader
     
-})  
+}
+
+document.getElementById('vader').addEventListener('mouseover', function(){
+    criarDivVader()
+})

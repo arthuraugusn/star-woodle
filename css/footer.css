@@ -3,7 +3,8 @@ footer{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 5%;
+    height: 10%;
+    background-color: blue;
 }
 
 .copyright{
