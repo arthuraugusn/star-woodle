@@ -38,13 +38,13 @@ main{
     font-size: 1.5rem;
 }
     
-.darth__vader{
+.darth_vader{
     display: flex;
     height: 100%;
     align-items: flex-end;
 }
 
-.darth__vader img{
+.darth_vader img{
     display: flex;
     height: 25%;
 }
@@ -61,4 +61,15 @@ main{
 
     height: 20%;
     transform: rotate(20.43deg);
+}
+
+.teste{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+}
+
+.n{
+    display: none;
 }
