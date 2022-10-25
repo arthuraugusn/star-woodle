@@ -2,7 +2,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    height: 100vh;
 }
 
 .main_items{
@@ -11,6 +11,7 @@ main{
     height: 100%;
     width: 100%;
     justify-content: space-around;
+    padding: 60px;
 }
 
 @font-face {
@@ -21,20 +22,29 @@ main{
     font-family: '';
     /* color: var(--color-titulo); */
     color: yellow;
-   
+   font-size: 2.4rem;
 }
 
 .search_input{
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     gap: 20px;
+    flex-grow: 1;
 }
 
 .search_input span{
     color: white;
     opacity: 0.7;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.input{
+    height: 2.5em;
+    border-radius: 20px;
+    width: 50%;
+    padding-left:1%;
 }
     
 .darth_vader{
@@ -47,7 +57,7 @@ main{
 .darth_vader img{
     display: flex;
     width: 100%;
-    height: 25%;
+    height: 30%;
 }
 
 .planet_container{
@@ -59,7 +69,7 @@ main{
 .planet{
     display: flex;
     width: 100%;
-    height: 30%;
+    height: 25%;
 }
 
 .caixa_exemplos{

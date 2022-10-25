@@ -30,6 +30,6 @@ const criarDivVader = function(){
     
 }
 
-document.getElementById('vader').addEventListener('mouseover', function(){
+document.getElementById('vader').addEventListener('click', function(){
     criarDivVader()
 })
