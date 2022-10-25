@@ -14,7 +14,7 @@ import {getAllCharacters} from "../js_consumo_api/swapi.js"
 const criarDivVader = function(){
     const div= document.createElement('div') 
 
-    const divVader= document.querySelector('.darth_vader')
+    const divVader= document.querySelector('.caixa_infos')
 
     div.classList.add('caixa_exemplos')
 
@@ -22,7 +22,7 @@ const criarDivVader = function(){
 
     divVader.appendChild(div)
 
-    if(caixaExemplo!= null){
+    if(caixaExemplo!== null){
         caixaExemplo.parentNode.removeChild(caixaExemplo)
     }
 
@@ -32,4 +32,5 @@ const criarDivVader = function(){
 
 document.getElementById('vader').addEventListener('click', function(){
     criarDivVader()
+
 })
