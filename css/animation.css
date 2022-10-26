@@ -1,0 +1,47 @@
+/* animacao do android na tela*/
+.android {
+
+    width: 150px;
+    height: 100px;
+    position: relative;
+    animation: animation 10s linear infinite;
+    animation-duration: 20s;
+
+}
+
+@keyframes animation {
+    0% {
+        top: -900px;
+        left: 2193.64px;
+    }
+
+    50% {
+        top: 1000px;
+        left: -900px;
+        transform: rotate(1440deg);
+    }
+
+    65% {
+        left: 50%;
+        top: 1000px;
+    }
+
+    80% {
+        top: -900px;
+        left: 1800px;
+    }
+    90% {
+
+        left: 700px;
+        top: -900px;
+
+    }
+    100% {
+
+        left: 700px;
+        top: 1000px;
+
+    }
+
+}
+/************************************************/

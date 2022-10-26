@@ -1,8 +1,9 @@
-main{
+\main{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .main_items{
@@ -13,16 +14,11 @@ main{
     justify-content: space-around;
     padding: 60px;
 }
-
-@font-face {
-    font-family: Jedi;
-    src: url(../fonts/Starjedi.ttf);
-}
 .title{    
-    font-family: '';
+    font-family: 'Reem Kufi Fun', sans-serif;
     /* color: var(--color-titulo); */
-    color: yellow;
-   font-size: 2.4rem;
+    color: var(--amarelo-titulo);
+    font-size: 2.4rem;
 }
 
 .search_input{
@@ -60,6 +56,7 @@ main{
     display: flex;
     width: 100%;
     height: 30%;
+    cursor: pointer;
 }
 
 .planet_container{
@@ -77,6 +74,8 @@ main{
 .caixa_infos{
     width: 100%;
     height: 40%;
+    transition-duration: 0.5s;
+
 }
 
 .caixa_exemplos{
@@ -86,6 +85,14 @@ main{
     border-radius: 20px;
     background-color: tomato;
 }
+.esconder_caixa::before{
+    content: '';
+    visibility: hidden;
+    
+
+}
+
+
 
 @media(max-width:768px){
     .planet_container{

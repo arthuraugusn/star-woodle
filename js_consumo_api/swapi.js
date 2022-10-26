@@ -16,7 +16,6 @@ const getAllCharacters = async()=>{
     const response = await fetch(url)
 
     const characters = response.json()
-
     
     return characters
 }

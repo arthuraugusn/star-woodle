@@ -11,14 +11,40 @@ import {getAllCharacters} from "../js_consumo_api/swapi.js"
 
 'use strict'
 
-const criarDivVader = function(){
+let charactersApi = await getAllCharacters()
+
+document.getElementById('vader').addEventListener('click', function (event){
+     criarDivVader(consumirNomePersonagens(charactersApi))
+     console.log(criarDivVader(consumirNomePersonagens(charactersApi)))
+})
+
+const consumirNomePersonagens = function(array){
+    let name = []
+
+    array.forEach(baseArray=>{
+        name.push(baseArray.name)
+    })
+
+    let teste = name.slice(0,10)
+
+    return teste
+}
+
+const criarDivVader = function(dados){
     const div= document.createElement('div') 
 
+    const a = document.createElement('a')
+
+    a.textContent = dados
+
     const divVader= document.querySelector('.caixa_infos')
+
 
     div.classList.add('caixa_exemplos')
 
     const caixaExemplo = divVader.querySelector('.caixa_exemplos')
+
+    div.appendChild(a)
 
     divVader.appendChild(div)
 
@@ -27,10 +53,4 @@ const criarDivVader = function(){
     }
 
     return divVader
-    
 }
-
-document.getElementById('vader').addEventListener('click', function(){
-    criarDivVader()
-
-})

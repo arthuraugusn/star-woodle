@@ -1,3 +1,7 @@
+  :root{
+    --amarelo-titulo: rgb(255, 197, 2);
+  }
+  
   body{
     display: flex;
     height: 100vh;

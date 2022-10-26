@@ -1,0 +1,74 @@
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.title{
+    padding-left: 40px;
+    font-family: 'Reem Kufi Fun';
+    color:var(--amarelo-titulo);
+}
+
+.caixa_header{
+    display: flex;
+    width: 100%;
+    gap: 60px;
+}
+
+.placeholder_pesquisar{
+    display: flex;
+    width: 14%;
+    padding-left: 1%;
+    border-radius: 20px;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+.div-armazenar-tudo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.div-infos-gerais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+}
+
+.div-infos-gerais span{
+    background-color: aqua;
+    width: 10%;
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+.div-pesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.div-pesquisa h2{
+    font-size: 4rem;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    color: white;
+}
+
+.img-personagem{
+    width: 30%;
+    opacity: 90%;
+}
