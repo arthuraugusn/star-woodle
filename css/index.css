@@ -1,4 +1,4 @@
-\main{
+main{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,13 +6,13 @@
     overflow: hidden;
 }
 
-.main_items{
+.main-items{
     display: flex;
     align-items: center;
     height: 100%;
     width: 100%;
     justify-content: space-around;
-    padding: 60px;
+    padding: 30px;
 }
 .title{    
     font-family: 'Reem Kufi Fun', sans-serif;
@@ -21,7 +21,7 @@
     font-size: 2.4rem;
 }
 
-.search_input{
+.search-input{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@
     flex-grow: 1;
 }
 
-.search_input span{
+.search-input span{
     color: white;
     opacity: 0.7;
     font-size: 1.3rem;
@@ -43,62 +43,69 @@
     padding-left:1%;
 }
     
-.darth_vader{
+.darth-vader{
     display: flex;
     height: 70%;
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
-    width: 15%;
+    width: 100%;
 }
 
-.darth_vader img{
+.darth-vader img{
     display: flex;
-    width: 100%;
-    height: 30%;
+    width: 30%;
+    height: 35%;
     cursor: pointer;
 }
 
-.planet_container{
+.planet-container{
     display: flex;
     justify-content: center;
     height: 70%;
+    width: 100%;
 }
 
 .planet{
     display: flex;
-    width: 100%;
+    width: 30%;
     height: 25%;
 }
 
-.caixa_infos{
+.caixa-infos{
     width: 100%;
     height: 40%;
     transition-duration: 0.5s;
 
 }
 
-.caixa_exemplos{
+.caixa-exemplos{
     display: flex;
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background-color: tomato;
-}
-.esconder_caixa::before{
-    content: '';
-    visibility: hidden;
+    border: 2px solid black;
+    background-color: bisque;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    flex-direction: column;
     
-
 }
 
+.caixa-sumir{
+    display: none;
+}
 
+@media(max-width: 1090px){
+    .darth-vader img{
+        width: 100%;
+    }
+}
 
-@media(max-width:768px){
-    .planet_container{
+@media(max-width:850px){
+    .planet-container{
         display: none;
     }
-    .darth_vader{
+    .darth-vader{
         display: none;
     }
 }

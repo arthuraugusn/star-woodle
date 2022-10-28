@@ -5,8 +5,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 10vh;
-    width: 100vw;
+    height: 5vh;
+    flex-grow: 1;
 }
 
 .copyright{

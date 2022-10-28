@@ -7,32 +7,17 @@
 
 */
 
-import {
-    getAllCharacters
-} from "../js_consumo_api/swapi.js"
-
 'use strict'
 
-let charactersApi = await getAllCharacters()
+import {getAllCharacters} from "../js_consumo_api/swapi.js"
 
-document.getElementById('vader').addEventListener('click', function (event) {
-    
+const charactersApi = await getAllCharacters()
+
+document.getElementById('vader').addEventListener('click', ()=>{
     criarDivVader(consumirNomePersonagens(charactersApi))
-    console.log(charactersApi)
+    const caixaInfos = document.querySelector('.caixa-infos')
+    caixaInfos.classList.toggle('caixa-sumir')
 })
-
-const clickVader = function () {
-
-    const div_vader = document.querySelector('.caixa_exemplos')
-
-    div_vader.addEventListener('click'),function (event) {
-            if (event.target.classList == '.caixa_exemplos')
-                event.target.classList.toggle('.esconder_caixa')
-        }
-}
-
-
-
 
 const consumirNomePersonagens = function (array) {
     let name = []
@@ -50,15 +35,15 @@ const criarDivVader = function (dados) {
     const div = document.createElement('div')
 
     const a = document.createElement('a')
+    
 
     a.textContent = dados
 
-    const divVader = document.querySelector('.caixa_infos')
+    const divVader = document.querySelector('.caixa-infos')
 
+    div.classList.add('caixa-exemplos')
 
-    div.classList.add('caixa_exemplos')
-
-    const caixaExemplo = divVader.querySelector('.caixa_exemplos')
+    const caixaExemplo = divVader.querySelector('.caixa-exemplos')
 
     div.appendChild(a)
 
