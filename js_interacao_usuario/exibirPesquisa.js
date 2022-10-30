@@ -2,6 +2,9 @@
 
 import { getCharacter } from "../js_consumo_api/swapi.js"
 
+const charactersApi = await getCharacter()
+
+
 const criarDivsPersonagem = function(dados){
     const main = document.querySelector('main')
     const divArmazenarTudo = document.createElement('div')
@@ -34,4 +37,19 @@ const criarDivsPersonagem = function(dados){
     main.appendChild(divArmazenarTudo)
 }
 
-criarDivsPersonagem(await getCharacter(13))
+const buscarInfo= function(nome){
+    let id
+    charactersApi.forEach(baseP=>{
+        if(baseP.name.toLowerCase() == nome.toLowerCase()){
+            id = baseP.id
+        }
+    })
+
+    return  id
+}
+
+let teste= 'Darth Vader'
+
+const ta= criarDivsPersonagem(await getCharacter(buscarInfo(teste)))
+
+console.log(ta)

@@ -55,3 +55,14 @@ const criarDivVader = function (dados) {
 
     return divVader
 }
+
+/* const goToCharactersPage = async ()=>{
+    const inputSearch = document.getElementById('input-search').value
+    const buscar = await buscarInfo(inputSearch)
+}
+
+
+
+const teste = await getCharacter(buscarInfo(nome))
+
+console.log(teste) */
