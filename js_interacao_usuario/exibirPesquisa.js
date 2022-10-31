@@ -1,9 +1,21 @@
 'use strict'
 
-import { getCharacter } from "../js_consumo_api/swapi.js"
+import {getCharacter,getAllCharacters } from "../js_consumo_api/swapi.js"
 
-const charactersApi = await getCharacter()
+let arrayAllCharacters = await getAllCharacters()
 
+const buscarInfo= function(array,nome){
+    let id
+    array.forEach(baseP=>{
+        if(baseP.name.toLowerCase() == nome.toLowerCase()){
+            id = baseP.id
+        }
+    })
+
+    return id
+}
+
+let nomeRecebidoOutraPagina = 'Obi-Wan Kenobi'
 
 const criarDivsPersonagem = function(dados){
     const main = document.querySelector('main')
@@ -13,12 +25,12 @@ const criarDivsPersonagem = function(dados){
     const divInfosGerais = document.createElement('div')
     divInfosGerais.classList.add('div-infos-gerais')
     const span = document.createElement('span')
-    let teste = {}
-
     span.textContent = `Height: ${dados.height} Mass: ${dados.mass}
-                        Gender: ${dados.gender} HomeWorld: ${dados.homeworld} Teste: ${dados.masters}`
-
+                        Gender: ${dados.gender} HomeWorld: ${dados.homeworld} Afiliações: ${dados.affiliations}`
     divInfosGerais.appendChild(span)
+
+    const a = document.createElement('a')
+    a.href = dados.wiki
 
     const divPesquisa = document.createElement('div')
     divPesquisa.classList.add('div-pesquisa')
@@ -28,8 +40,9 @@ const criarDivsPersonagem = function(dados){
     img.classList.add('img-personagem')
     img.src = dados.image
 
+    a.appendChild(img)
     divPesquisa.appendChild(h2)
-    divPesquisa.appendChild(img)
+    divPesquisa.appendChild(a)
 
     divArmazenarTudo.appendChild(divInfosGerais)
     divArmazenarTudo.appendChild(divPesquisa)
@@ -37,19 +50,4 @@ const criarDivsPersonagem = function(dados){
     main.appendChild(divArmazenarTudo)
 }
 
-const buscarInfo= function(nome){
-    let id
-    charactersApi.forEach(baseP=>{
-        if(baseP.name.toLowerCase() == nome.toLowerCase()){
-            id = baseP.id
-        }
-    })
-
-    return  id
-}
-
-let teste= 'Darth Vader'
-
-const ta= criarDivsPersonagem(await getCharacter(buscarInfo(teste)))
-
-console.log(ta)
+criarDivsPersonagem(await getCharacter(buscarInfo(arrayAllCharacters,nomeRecebidoOutraPagina)))
