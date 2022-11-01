@@ -36,7 +36,6 @@ const criarDivVader = function (dados) {
 
     const a = document.createElement('a')
     
-
     a.textContent = dados
 
     const divVader = document.querySelector('.caixa-infos')
@@ -55,6 +54,19 @@ const criarDivVader = function (dados) {
 
     return divVader
 }
+
+
+const Keypress = async (event) =>{
+
+    if(event.key == 'Enter'){ 
+        localStorage.setItem(personagem,consumirNomePersonagens())
+        consumirNomePersonagens()
+        window.location.href('www.google.com')
+    }
+}
+
+document.querySelector('').addEventListener('keypress', Keypress)
+
 
 /* const goToCharactersPage = async ()=>{
     const inputSearch = document.getElementById('input-search').value
