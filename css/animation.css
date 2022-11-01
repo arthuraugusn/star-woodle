@@ -1,12 +1,10 @@
 /* animacao do android na tela*/
 .android {
-
     width: 150px;
     height: 100px;
     position: relative;
     animation: animation 10s linear infinite;
     animation-duration: 20s;
-
 }
 
 @keyframes animation {
@@ -42,6 +40,5 @@
         top: 1000px;
 
     }
-
 }
 /************************************************/

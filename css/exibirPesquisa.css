@@ -5,21 +5,27 @@ header{
     padding: 20px;
 }
 
+header nav{
+    display: flex;
+    width: 100%;
+}
+
 .title{
+    font-size: 1.7rem;
     padding-left: 40px;
     font-family: 'Reem Kufi Fun';
     color:var(--amarelo-titulo);
 }
 
-.caixa_header{
+.caixa-header{
     display: flex;
     width: 100%;
     gap: 60px;
 }
 
-.placeholder_pesquisar{
+.placeholder-pesquisar{
     display: flex;
-    width: 14%;
+    width: 16%;
     padding-left: 1%;
     border-radius: 20px;
 }
@@ -41,13 +47,17 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     width: 100%;
     height: 100%;
-    background-color: brown;
+    margin-left: 2%;
 }
 
 .div-infos-gerais span{
-    background-color: aqua;
+    display: flex;
+    width:100%;
+    color: var(--amarelo-titulo);
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
     font-family: 'Reem Kufi Fun', sans-serif;
 }
 
@@ -67,7 +77,14 @@ main{
     color: white;
 }
 
+.div-pesquisa a{
+    display: flex;
+    width: 35%;
+    align-items: center;
+    justify-content: center;
+}
+
 .img-personagem{
-    width: 30%;
+    width: 100%;
     opacity: 90%;
 }

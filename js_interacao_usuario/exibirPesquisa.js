@@ -1,3 +1,12 @@
+/* 
+
+- OBJETIVO: Arquivo responsável por interagir com o usuário na página de Exibir Pesquisa
+- AUTOR: Arthur Augusto da Silva Nunes, Lucas Camilo Ramalho, Heitor Pontieiri
+- DATA DE CRIAÇÃO: 30/10/2022
+- VERSÃO: 1.0
+
+*/
+
 'use strict'
 
 import {getCharacter,getAllCharacters } from "../js_consumo_api/swapi.js"
@@ -15,7 +24,7 @@ const buscarInfo= function(array,nome){
     return id
 }
 
-let nomeRecebidoOutraPagina = 'Obi-Wan Kenobi'
+let nomeRecebidoOutraPagina = 'obi-wan kenobi'
 
 const criarDivsPersonagem = function(dados){
     const main = document.querySelector('main')
@@ -24,10 +33,28 @@ const criarDivsPersonagem = function(dados){
     
     const divInfosGerais = document.createElement('div')
     divInfosGerais.classList.add('div-infos-gerais')
-    const span = document.createElement('span')
-    span.textContent = `Height: ${dados.height} Mass: ${dados.mass}
-                        Gender: ${dados.gender} HomeWorld: ${dados.homeworld} Afiliações: ${dados.affiliations}`
-    divInfosGerais.appendChild(span)
+    const spanHeight = document.createElement('span')
+    spanHeight.textContent=`Height:${dados.height}`
+    const spanMass = document.createElement('span')
+    spanMass.textContent = `Mass: ${dados.mass}`
+    const spanGender = document.createElement('span')
+    spanGender.textContent = `Gender:${dados.gender}`
+    const spanHomeWorld = document.createElement('span')
+    spanHomeWorld.textContent=`HomeWorld: ${dados.homeworld}`
+    const spanSpecie = document.createElement('span')
+    spanSpecie.textContent = `Species: ${dados.species}`
+    const spanMasters = document.createElement('span')
+    spanMasters.textContent = `Masters: ${dados.masters}`
+    const spanApprenticies = document.createElement('span')
+    spanApprenticies.textContent = `Apprentices: ${dados.apprentices}`
+
+    divInfosGerais.appendChild(spanHeight)
+    divInfosGerais.appendChild(spanMass)
+    divInfosGerais.appendChild(spanGender)
+    divInfosGerais.appendChild(spanHomeWorld)
+    divInfosGerais.appendChild(spanSpecie)
+    divInfosGerais.appendChild(spanMasters)
+    divInfosGerais.appendChild(spanApprenticies)
 
     const a = document.createElement('a')
     a.href = dados.wiki
