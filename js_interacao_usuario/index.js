@@ -59,13 +59,13 @@ const criarDivVader = function (dados) {
 const Keypress = async (event) =>{
 
     if(event.key == 'Enter'){ 
-        localStorage.setItem(personagem,consumirNomePersonagens())
-        consumirNomePersonagens()
-        window.location.href('www.google.com')
+        localStorage.setItem('character', event.target.value)
+        window.location.href='../page/exibirPesquisa.html'
+        /* ../page/exibirPesquisa.html */
     }
 }
 
-document.querySelector('').addEventListener('keypress', Keypress)
+document.querySelector('.input').addEventListener('keypress', Keypress)
 
 
 /* const goToCharactersPage = async ()=>{

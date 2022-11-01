@@ -24,7 +24,7 @@ const buscarInfo= function(array,nome){
     return id
 }
 
-let nomeRecebidoOutraPagina = 'obi-wan kenobi'
+let nomeRecebidoOutraPagina = localStorage.getItem('character')
 
 const criarDivsPersonagem = function(dados){
     const main = document.querySelector('main')
