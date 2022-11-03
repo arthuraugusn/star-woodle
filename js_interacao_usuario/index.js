@@ -60,7 +60,7 @@ const Keypress = async (event) =>{
 
     if(event.key == 'Enter'){ 
         localStorage.setItem('character', event.target.value)
-        window.location.href='../page/exibirPesquisa.html'
+        window.location.href='./page/exibirPesquisa.html'
         /* ../page/exibirPesquisa.html */
     }
 }
