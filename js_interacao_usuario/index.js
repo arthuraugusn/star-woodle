@@ -26,12 +26,14 @@ const consumirNomePersonagens = function (array) {
         name.push(baseArray.name)
     })
 
-    let teste = name.slice(0, 10)
+    let nomePersonagem = name.slice(0, 1)
+    let frase = `Try ${nomePersonagem} and have a great surprise!` 
 
-    return teste
+    return frase
 }
 
 const criarDivVader = function (dados) {
+    
     const div = document.createElement('div')
 
     const a = document.createElement('a')
