@@ -45,7 +45,6 @@ main{
     max-width: 20%;
     max-height: 550px;
     cursor: pointer;
-    background-color: tomato;
 }
 .caixa-exemplos{
     display: flex;
@@ -93,6 +92,9 @@ main{
 }
 
 @media(max-width:850px){
+    main{
+        height: 70vh;
+    }
     .planet{
         display: none;
     }
