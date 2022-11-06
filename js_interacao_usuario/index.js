@@ -35,6 +35,7 @@ const consumirNomePersonagens = function (array) {
 const criarDivVader = function (dados) {
     
     const div = document.createElement('div')
+    const divT = document.createElement('div')
 
     const a = document.createElement('a')
     
@@ -43,15 +44,18 @@ const criarDivVader = function (dados) {
     const divVader = document.querySelector('.caixa-infos')
 
     div.classList.add('caixa-exemplos')
+    divT.classList.add('triangulo')
 
     const caixaExemplo = divVader.querySelector('.caixa-exemplos')
-
+    const trianguloCaixa = divVader.querySelector('.triangulo')
     div.appendChild(a)
 
     divVader.appendChild(div)
+    divVader.appendChild(divT)
 
     if (caixaExemplo !== null) {
         caixaExemplo.parentNode.removeChild(caixaExemplo)
+        trianguloCaixa.parentNode.removeChild(trianguloCaixa)
     }
 
     return divVader

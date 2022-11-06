@@ -1,5 +1,5 @@
 main{
-    height: 100vh;
+    height: 105vh;
     overflow: hidden;
 }
 
@@ -31,6 +31,7 @@ main{
 .darth-vader{
 
     margin-top: 30px;
+    max-height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -41,10 +42,9 @@ main{
 .darth-vader img{
 
     display: flex;
-    min-width: 25%;
-    min-height: 30%;
-    max-width: 25%;
-    max-height: 30%;
+
+    max-width: 20%;
+    height: 25%;
     cursor: pointer;
 }
 .caixa-exemplos{
@@ -52,13 +52,20 @@ main{
     margin-right: 100px;
     padding-right: 10px;
     padding-left: 10px;
-    width: 50%;
-    height: 100%;
     border-radius: 20px;
-    border: 2px solid black;
-    background-color: bisque;
+    border: 3px solid rgb(97, 97, 97);
+    background-color: rgb(170, 170, 170);
     font-family: 'Reem Kufi Fun', sans-serif;
     flex-direction: column;
+}
+.triangulo{
+    margin-left: 250px;
+    width: 0; 
+    height: 0; 
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid rgb(97, 97, 97);
+
 }
 
 .caixa-sumir{
