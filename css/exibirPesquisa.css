@@ -3,8 +3,7 @@ header{
     display: flex;
     align-items: center;
     padding-left: 20px;
-    padding-top: 20px;
-
+    padding-top: 20px; 
 }
 
 header nav{
@@ -42,6 +41,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-left: 100px;
     height: 100%;
 }
 
@@ -91,6 +91,14 @@ main{
     width: 100%;
     opacity: 90%;
 }
+@media(max-width: 1120){
+
+    .div-pesquisa h2{
+
+        font-size: 3.5rem;
+
+    }
+}
 @media(max-width: 1015px){
     .div-pesquisa h2{
 
@@ -108,6 +116,7 @@ main{
     .div-armazenar-tudo{
 
         display: flex;
+        padding-left: 0;
         flex-direction: column-reverse;
         padding-top: 150px;
 
@@ -140,11 +149,6 @@ main{
     .div-pesquisa h2{
 
         font-size: 1.5rem;
-
-    }
-    .img-personagem{
-    
-       
 
     }
 }
