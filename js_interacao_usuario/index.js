@@ -11,15 +11,15 @@
 
 import {getAllCharacters} from "../js_consumo_api/swapi.js"
 
-const charactersApi = await getAllCharacters()
+const characters = await getAllCharacters()
 
 document.getElementById('vader').addEventListener('click', ()=>{
-    criarDivVader(consumirNomePersonagens(charactersApi))
+    criarDivVader(consumirArrayCharacters(characters))
     const caixaInfos = document.querySelector('.caixa-infos')
     caixaInfos.classList.toggle('caixa-sumir')
 })
 
-const consumirNomePersonagens = function (array) {
+const consumirArrayCharacters = function (array) {
     let name = []
 
     array.forEach(baseArray => {
@@ -67,20 +67,7 @@ const Keypress = async (event) =>{
     if(event.key == 'Enter'){ 
         localStorage.setItem('character', event.target.value)
         window.location.href='./page/exibirPesquisa.html'
-        /* ../page/exibirPesquisa.html */
     }
 }
 
 document.querySelector('.input').addEventListener('keypress', Keypress)
-
-
-/* const goToCharactersPage = async ()=>{
-    const inputSearch = document.getElementById('input-search').value
-    const buscar = await buscarInfo(inputSearch)
-}
-
-
-
-const teste = await getCharacter(buscarInfo(nome))
-
-console.log(teste) */

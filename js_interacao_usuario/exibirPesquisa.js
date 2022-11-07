@@ -11,9 +11,9 @@
 
 import {getCharacter,getAllCharacters } from "../js_consumo_api/swapi.js"
 
-let arrayAllCharacters = await getAllCharacters()
+const characters = await getAllCharacters()
 
-const buscarInfo= function(array,nome){
+const buscarIdCharacter= function(array,nome){
     let id
     array.forEach(baseP=>{
         if(baseP.name.toLowerCase() == nome.toLowerCase()){
@@ -23,8 +23,6 @@ const buscarInfo= function(array,nome){
 
     return id
 }
-
-let nomeRecebidoOutraPagina = localStorage.getItem('character')
 
 const criarDivsPersonagem = function(dados){
     const main = document.querySelector('main')
@@ -77,4 +75,6 @@ const criarDivsPersonagem = function(dados){
     main.appendChild(divArmazenarTudo)
 }
 
-criarDivsPersonagem(await getCharacter(buscarInfo(arrayAllCharacters,nomeRecebidoOutraPagina)))
+let nomeCharacter = localStorage.getItem('character')
+
+criarDivsPersonagem(await getCharacter(buscarIdCharacter(await getAllCharacters(),nomeCharacter)))
