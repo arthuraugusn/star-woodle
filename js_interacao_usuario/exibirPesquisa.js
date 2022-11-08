@@ -26,6 +26,17 @@ const buscarIdCharacter= function(array,nome){
     return id
 }
 
+const teste = function(dados){
+    let teste
+    if(dados.masters == undefined){
+        teste = `Class: ${dados.class}`
+    }else{
+        teste = `Masters: ${dados.masters}`
+    }
+
+    return teste
+}
+
 const criarDivsPersonagem = function(dados){
     const main = document.querySelector('main')
     const divArmazenarTudo = document.createElement('div')
@@ -44,11 +55,7 @@ const criarDivsPersonagem = function(dados){
     const spanSpecie = document.createElement('span')
     spanSpecie.textContent = `Species: ${dados.species}`
     const spanMasters = document.createElement('span')
-    if(dados.masters == undefined){
-        spanMasters.textContent = `Class: ${dados.class}`
-    }else{
-        spanMasters.textContent = `Massters: ${dados.masters}`
-    }
+    spanMasters.textContent = teste(dados)
     /* spanMasters.textContent = `Masters: ${dados.masters}` */
     const spanApprenticies = document.createElement('span')
     spanApprenticies.textContent = `Apprentices: ${dados.apprentices}`
@@ -83,6 +90,7 @@ const criarDivsPersonagem = function(dados){
 }
 
 criarDivsPersonagem(await getCharacter(buscarIdCharacter(characters, nomeCharacter)))
+
 
 
 const keyPress = async (event) =>{
