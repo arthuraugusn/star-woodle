@@ -13,6 +13,8 @@ import {getCharacter,getAllCharacters } from "../js_consumo_api/swapi.js"
 
 const characters = await getAllCharacters()
 
+const nomeCharacter = localStorage.getItem('character')
+
 const buscarIdCharacter= function(array,nome){
     let id
     array.forEach(baseP=>{
@@ -42,7 +44,12 @@ const criarDivsPersonagem = function(dados){
     const spanSpecie = document.createElement('span')
     spanSpecie.textContent = `Species: ${dados.species}`
     const spanMasters = document.createElement('span')
-    spanMasters.textContent = `Masters: ${dados.masters}`
+    if(dados.masters == undefined){
+        spanMasters.textContent = `Class: ${dados.class}`
+    }else{
+        spanMasters.textContent = `Massters: ${dados.masters}`
+    }
+    /* spanMasters.textContent = `Masters: ${dados.masters}` */
     const spanApprenticies = document.createElement('span')
     spanApprenticies.textContent = `Apprentices: ${dados.apprentices}`
 
@@ -75,6 +82,15 @@ const criarDivsPersonagem = function(dados){
     main.appendChild(divArmazenarTudo)
 }
 
-let nomeCharacter = localStorage.getItem('character')
+criarDivsPersonagem(await getCharacter(buscarIdCharacter(characters, nomeCharacter)))
 
-criarDivsPersonagem(await getCharacter(buscarIdCharacter(await getAllCharacters(),nomeCharacter)))
+
+const keyPress = async (event) =>{
+
+    if(event.key == 'Enter'){ 
+        localStorage.setItem('character', event.target.value)
+        window.location.reload()
+    }
+}
+
+document.getElementById('re-search').addEventListener('keypress', keyPress)

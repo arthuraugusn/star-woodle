@@ -62,7 +62,7 @@ const criarDivVader = function (dados) {
 }
 
 
-const Keypress = async (event) =>{
+const keyPress = async (event) =>{
 
     if(event.key == 'Enter'){ 
         localStorage.setItem('character', event.target.value)
@@ -70,4 +70,4 @@ const Keypress = async (event) =>{
     }
 }
 
-document.querySelector('.input').addEventListener('keypress', Keypress)
+document.querySelector('.input').addEventListener('keypress', keyPress)
