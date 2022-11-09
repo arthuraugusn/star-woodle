@@ -94,35 +94,29 @@ main{
 @media(max-width: 1120){
 
     .div-pesquisa h2{
-
         font-size: 3.5rem;
-
     }
 }
 @media(max-width: 1015px){
     .div-pesquisa h2{
-
         font-size: 3rem;
 
     }
     .img-personagem{
-    
         min-width: 100%;
-
     }
 }
 @media(max-width: 765px){
-
+    
     .div-armazenar-tudo{
-
         display: flex;
         padding-left: 0;
         flex-direction: column-reverse;
         padding-top: 150px;
+        gap: 20px;
 
     }
     .div-infos-gerais {
-    
         padding-top: 50px;
     
     }
@@ -135,7 +129,6 @@ main{
 
     }
     .div-pesquisa h2{
-
         font-size: 2rem;
 
     }
@@ -144,6 +137,10 @@ main{
         min-width: 100%;
 
     }
+    .copyright{
+       
+        margin-top: 7%;
+    }
 }
 @media(max-width: 525px){
     .div-pesquisa h2{
@@ -151,4 +148,8 @@ main{
         font-size: 1.5rem;
 
     }
+    .placeholder-pesquisar{
+        height: 50%;
+    }
+
 }

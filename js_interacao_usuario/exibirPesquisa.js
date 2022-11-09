@@ -9,16 +9,16 @@
 
 'use strict'
 
-import {getCharacter,getAllCharacters } from "../js_consumo_api/swapi.js"
+import { getCharacter, getAllCharacters } from "../js_consumo_api/swapi.js"
 
 const characters = await getAllCharacters()
 
 const nomeCharacter = localStorage.getItem('character')
 
-const buscarIdCharacter= function(array,nome){
+const buscarIdCharacter = function (array, nome) {
     let id
-    array.forEach(baseP=>{
-        if(baseP.name.toLowerCase() == nome.toLowerCase()){
+    array.forEach(baseP => {
+        if (baseP.name.toLowerCase() == nome.toLowerCase()) {
             id = baseP.id
         }
     })
@@ -26,32 +26,32 @@ const buscarIdCharacter= function(array,nome){
     return id
 }
 
-const teste = function(dados){
+const teste = function (dados) {
     let teste
-    if(dados.masters == undefined){
+    if (dados.masters == undefined) {
         teste = `Class: ${dados.class}`
-    }else{
+    } else {
         teste = `Masters: ${dados.masters}`
     }
 
     return teste
 }
 
-const criarDivsPersonagem = function(dados){
+const criarDivsPersonagem = function (dados) {
     const main = document.querySelector('main')
     const divArmazenarTudo = document.createElement('div')
     divArmazenarTudo.classList.add('div-armazenar-tudo')
-    
+
     const divInfosGerais = document.createElement('div')
     divInfosGerais.classList.add('div-infos-gerais')
     const spanHeight = document.createElement('span')
-    spanHeight.textContent=`Height:${dados.height}`
+    spanHeight.textContent = `Height:${dados.height}`
     const spanMass = document.createElement('span')
     spanMass.textContent = `Mass: ${dados.mass}`
     const spanGender = document.createElement('span')
     spanGender.textContent = `Gender:${dados.gender}`
     const spanHomeWorld = document.createElement('span')
-    spanHomeWorld.textContent=`HomeWorld: ${dados.homeworld}`
+    spanHomeWorld.textContent = `HomeWorld: ${dados.homeworld}`
     const spanSpecie = document.createElement('span')
     spanSpecie.textContent = `Species: ${dados.species}`
     const spanMasters = document.createElement('span')
@@ -93,9 +93,9 @@ criarDivsPersonagem(await getCharacter(buscarIdCharacter(characters, nomeCharact
 
 
 
-const keyPress = async (event) =>{
+const keyPress = async (event) => {
 
-    if(event.key == 'Enter'){ 
+    if (event.key == 'Enter') {
         localStorage.setItem('character', event.target.value)
         window.location.reload()
     }
