@@ -11,12 +11,15 @@ const consumirArrayCharacters = function (array) {
 
     const img = document.createElement('img')
     img.src = array.image
-    
-    const name = document.createElement('h3')
-    name.textContent =array.name
+    img.classList.add('a')
 
-    div.appendChild(name)
-    div.appendChild(img)
+    const a = document.createElement('a')
+    a.classList.add('link')
+    a.textContent = array.name
+    a.href = './exibirPesquisa.html'
+
+    a.appendChild(img)
+    div.appendChild(a)
 
     return div
 }
@@ -37,3 +40,11 @@ const keyPressReload = async (event) => {
 }
 
 document.getElementById('re-search').addEventListener('keypress', keyPressReload)
+
+document.querySelector('main').addEventListener('click', (event)=>{
+    if(event.target.classList.contains('a')){
+        localStorage.setItem('character', event.target.parentElement.textContent)
+    }else{
+        localStorage.setItem('character', event.target.textContent)
+    }
+})

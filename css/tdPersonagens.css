@@ -25,10 +25,13 @@ main{
 
 .caixa-p h3{
     color: white;
+    font-family: 'Reem Kufi Fun', sans-serif;
 }
 
 .caixa-p img{
-    width: 80%;
+
+    max-height: 250px;
+    border: 3px solid rgb(97, 97, 97);
 }
 
 @media(max-width:768px){

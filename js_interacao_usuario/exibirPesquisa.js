@@ -28,16 +28,13 @@ const buscarIdCharacter = function (array, nome) {
 
 const infosTratativa = function (dados) {
     let span
-    if (dados.masters == undefined) {
+    if (dados.class != undefined) {
         span = `Class: ${dados.class}`
-    } else if(dados.class == undefined){
+    } else if(dados.masters != undefined){
         span = `Masters: ${dados.masters}`
-    }else if(dados.mass != undefined){
-        span = `Mass: ${dados.mass}`
+    }else{
+        span = ''
     }
-
-    span = ''
-
     return span
 }
 
@@ -54,7 +51,9 @@ const criarDivsPersonagem = function (dados) {
     spanHeight.textContent = `Height:${dados.height}`
 
     const spanMass = document.createElement('span')
-    spanMass.textContent = infosTratativa(dados)
+    if(dados.mass != undefined){
+        spanMass.textContent = `Mass: ${dados.mass}`
+    }
 
     const spanGender = document.createElement('span')
     spanGender.textContent = `Gender:${dados.gender}`
