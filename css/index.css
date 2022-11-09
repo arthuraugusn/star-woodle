@@ -39,7 +39,6 @@ main{
 }
 
 .darth-vader img{
-
     display: flex;
     max-width: 25%;
     max-height: 550px;
@@ -70,6 +69,11 @@ main{
     display: none;
 }
 
+.subtitle-mobile{
+    color: white;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    display: none;
+}
 /* 
 @media(max-height : 915px){
     .darth-vader img {
@@ -108,5 +112,8 @@ main{
     }
     .darth-vader{
         display: none;
+    }
+    .subtitle-mobile{
+        display: flex;
     }
 }
