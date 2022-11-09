@@ -24,9 +24,9 @@ main{
 
 }
 .input{
-    height: 2.5em;
+    height: 3.5em;
     border-radius: 20px;
-    width: 50%;
+    width: 70%;
     padding-left:1%;
 }
 .darth-vader{
@@ -64,7 +64,6 @@ main{
     border-top: 25px solid rgb(97, 97, 97);
 
 }
-
 .caixa-sumir{
     display: none;
 }
