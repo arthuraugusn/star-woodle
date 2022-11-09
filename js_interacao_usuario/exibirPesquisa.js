@@ -26,55 +26,64 @@ const buscarIdCharacter = function (array, nome) {
     return id
 }
 
-const teste = function (dados) {
-    let teste
+const infosTratativa = function (dados) {
+    let span
     if (dados.masters == undefined) {
-        teste = `Class: ${dados.class}`
-    } else {
-        teste = `Masters: ${dados.masters}`
+        span = `Class: ${dados.class}`
+    } else if(dados.class == undefined){
+        span = `Masters: ${dados.masters}`
+    }else if(dados.mass != undefined){
+        span = `Mass: ${dados.mass}`
     }
 
-    return teste
+    span = ''
+
+    return span
 }
 
 const criarDivsPersonagem = function (dados) {
     const main = document.querySelector('main')
+
     const divArmazenarTudo = document.createElement('div')
     divArmazenarTudo.classList.add('div-armazenar-tudo')
 
     const divInfosGerais = document.createElement('div')
     divInfosGerais.classList.add('div-infos-gerais')
+
     const spanHeight = document.createElement('span')
     spanHeight.textContent = `Height:${dados.height}`
+
     const spanMass = document.createElement('span')
-    spanMass.textContent = `Mass: ${dados.mass}`
+    spanMass.textContent = infosTratativa(dados)
+
     const spanGender = document.createElement('span')
     spanGender.textContent = `Gender:${dados.gender}`
+
     const spanHomeWorld = document.createElement('span')
     spanHomeWorld.textContent = `HomeWorld: ${dados.homeworld}`
+
     const spanSpecie = document.createElement('span')
     spanSpecie.textContent = `Species: ${dados.species}`
-    const spanMasters = document.createElement('span')
-    spanMasters.textContent = teste(dados)
-    /* spanMasters.textContent = `Masters: ${dados.masters}` */
-    const spanApprenticies = document.createElement('span')
-    spanApprenticies.textContent = `Apprentices: ${dados.apprentices}`
+
+    const spanMastersClass = document.createElement('span')
+    spanMastersClass.textContent = infosTratativa(dados)
 
     divInfosGerais.appendChild(spanHeight)
     divInfosGerais.appendChild(spanMass)
     divInfosGerais.appendChild(spanGender)
     divInfosGerais.appendChild(spanHomeWorld)
     divInfosGerais.appendChild(spanSpecie)
-    divInfosGerais.appendChild(spanMasters)
-    divInfosGerais.appendChild(spanApprenticies)
+    divInfosGerais.appendChild(spanMastersClass)
 
     const a = document.createElement('a')
     a.href = dados.wiki
 
     const divPesquisa = document.createElement('div')
     divPesquisa.classList.add('div-pesquisa')
+
     const h2 = document.createElement('h2')
     h2.textContent = dados.name
+
     const img = document.createElement('img')
     img.classList.add('img-personagem')
     img.src = dados.image
@@ -89,11 +98,15 @@ const criarDivsPersonagem = function (dados) {
     main.appendChild(divArmazenarTudo)
 }
 
-criarDivsPersonagem(await getCharacter(buscarIdCharacter(characters, nomeCharacter)))
+const busca =buscarIdCharacter(characters, nomeCharacter)
 
+if(busca == undefined){
+    window.location.href = './todosPersonages.html'
+}else{
+    criarDivsPersonagem(await getCharacter(buscarIdCharacter(characters, nomeCharacter)))
+}
 
-
-const keyPress = async (event) => {
+const keyPressReload = async (event) => {
 
     if (event.key == 'Enter') {
         localStorage.setItem('character', event.target.value)
@@ -101,4 +114,4 @@ const keyPress = async (event) => {
     }
 }
 
-document.getElementById('re-search').addEventListener('keypress', keyPress)
+document.getElementById('re-search').addEventListener('keypress', keyPressReload)
