@@ -74,6 +74,9 @@ main{
     font-family: 'Reem Kufi Fun', sans-serif;
     display: none;
 }
+.copyright{
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
 /* 
 @media(max-height : 915px){
     .darth-vader img {
