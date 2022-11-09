@@ -10,20 +10,25 @@ main{
     display: flex;
     flex-wrap: wrap;
     gap: 10%;
+    justify-content: center;
 }
 .link{
     display: flex;
+    
     flex-direction: column;
     text-decoration: none;
     color: white;
     font-family: 'Reem Kufi Fun', sans-serif;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 30%;
+    
 
 }
 .caixa-p img{
+
     max-height: 300px;
+
 }
 
 /* main{
