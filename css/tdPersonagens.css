@@ -1,15 +1,40 @@
 .message{
     color: white;
     font-size: 2rem;
-}
+    font-family: 'Reem Kufi Fun', sans-serif;
+    
 
+}
 main{
 
     display: flex;
     flex-wrap: wrap;
+    gap: 10%;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20%;
+
+}
+.caixa-p img{
+    max-height: 300px;
+}
+
+/* main{
+
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin: 3%;
     margin-top: 4%;
-    gap: 40px;
+
 }
 
 .caixa-p{
@@ -18,7 +43,6 @@ main{
     justify-content: center;
     width: 20%;
     height: 70%;
-    gap: 20px;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.041);
 }
@@ -29,10 +53,9 @@ main{
 }
 
 .caixa-p img{
-
-    max-height: 250px;
+    max-height: 270px;
     border: 3px solid rgb(97, 97, 97);
-}
+} */
 
 @media(max-width:768px){
     .message{
