@@ -62,8 +62,10 @@ main{
     color: var(--amarelo-titulo);
     font-size: clamp(0.5rem, 5vw, 1.5rem);
     font-family: 'Reem Kufi Fun', sans-serif;
+    align-items: center;
+    justify-content: center;
 }
-
+    
 .div-pesquisa{
     display: flex;
     flex-direction: column;
